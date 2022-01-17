@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    mysql:
+      jdbc-url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+      password: BTy2523430
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+    psql:
+      jdbc-url: jdbc:postgresql://localhost:5432/test?serverTimezone=GMT%2B8&useSSL=false
+      username: postgres
+      password: BTy2523430
+      driver-class-name: org.postgresql.Driver
+
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
