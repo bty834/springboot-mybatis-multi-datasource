@@ -15,8 +15,10 @@ spring:
       driver-class-name: org.postgresql.Driver
 
 
+# 多数据源，这里配置没用，必须在每个数据源配置类里单独配置
+#mybatis:
+#  configuration:
+#    map-underscore-to-camel-case: true
+#  mapper-locations: classpath:mapper/*.xml
 
-mybatis:
-  configuration:
-    map-underscore-to-camel-case: true
 

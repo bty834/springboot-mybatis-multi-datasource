@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PsqlUserMapper {
-    @Select("select id,name from puser where id=#{id}")
+
     User selectUserById(Integer id);
 }

@@ -21,8 +21,6 @@ import org.springframework.web.bind.annotation.*;
 @SpringBootApplication
 public class MainApplication {
 
-    @Autowired
-    private MyConfig config;
 
     @Autowired
     private MysqlUserMapper mysqlUserMapper;
@@ -31,21 +29,20 @@ public class MainApplication {
     private PsqlUserMapper psqlUserMapper;
 
 
-    @GetMapping("/")
-    public User hello() {
-        System.out.println("inside");
-        return config.getUser();
+    @RequestMapping("/")
+    public int hello() {
+        int i = 234;
+        return i;
     }
 
-
-    @GetMapping("/mysql")
+    @RequestMapping("/mysql")
     public User hello2() {
         System.out.println("inside");
         final User user = mysqlUserMapper.selectUserById(1);
         return user;
     }
 
-    @GetMapping("/psql")
+    @RequestMapping("/psql")
     public User hello3() {
         System.out.println("inside");
         final User user = psqlUserMapper.selectUserById(1);
@@ -53,6 +50,6 @@ public class MainApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(MainApplication.class,args);
+        SpringApplication.run(MainApplication.class, args);
     }
 }

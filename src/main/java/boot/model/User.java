@@ -12,32 +12,28 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class User {
-    @Value("3")
-    private int id;
-    @Value("BAOTINGYU")
-    private String name;
 
-    public int getId() {
-        return id;
+
+    private Integer userId;
+
+    private String userName;
+
+
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
+
 }

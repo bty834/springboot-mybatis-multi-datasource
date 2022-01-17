@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MysqlUserMapper {
-    @Select("select id,name from user where id=#{id}")
+
     User selectUserById(Integer id);
 }
