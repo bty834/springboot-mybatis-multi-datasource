@@ -44,10 +44,11 @@ public class PsqlConfig {
             bean.setMapperLocations(resources);
 
             // mybatis配置。多数据源时在application.yml设置mybatis.configuration无效
-            final org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
+            final org.apache.ibatis.session.Configuration configuration = bean.getObject().getConfiguration();
+            // final org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
+
             configuration.setMapUnderscoreToCamelCase(true);
             bean.setConfiguration(configuration);
-
 
             return bean.getObject();
         }

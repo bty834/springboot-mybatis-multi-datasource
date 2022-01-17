@@ -45,9 +45,11 @@ public class MysqlConfig {
         // 设置mapper.xml位置，必须设置。多数据源时在application.yml设置mapper-locations无效
         final Resource[] resources = new PathMatchingResourcePatternResolver().getResources("classpath:/mapper/MysqlUserMapper.xml");
         bean.setMapperLocations(resources);
-
         // mybatis配置。多数据源时在application.yml设置mybatis.configuration无效
-        final org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
+
+        final org.apache.ibatis.session.Configuration configuration = bean.getObject().getConfiguration();
+        // final org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
+
         configuration.setMapUnderscoreToCamelCase(true);
         bean.setConfiguration(configuration);
 
